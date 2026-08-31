@@ -6,15 +6,12 @@ package character
 class Goblin(health: Int, attack: Int, defense: Int) : Character(health, attack, defense) {
 
     /**
-     * Retorna o poder de ataque do Goblin.
+     * Retorna o poder de ataque do character.Goblin.
      */
     override fun attack(): Int = attack
 
     /**
-     * Representação textual do Goblin.
+     * Representação textual do character.Goblin.
      */
-    override fun toString(): String {
-        // Exercicio: Como melhorar para imprimir o nome do inimigo?
-        return super.toString()
-    }
+    override fun toString(): String = "Green Goblin"
 }
