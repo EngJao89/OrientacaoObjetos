@@ -32,7 +32,11 @@ abstract class Character(
      * Aplica dano ao personagem, considerando sua defesa.
      */
     fun receiveDamage(damage: Int) {
-        // Exercicio: Pesquise como implementar 25% de chance do personagem esquivar do ataque.
+        // 25% de chance de desviar do ataque
+        if (Random.nextDouble() < 0.25) {
+            println("$this esquivou do ataque!")
+            return
+        }
 
         val damageTaken = maxOf(damage - defense, 0)
         health = maxOf(health - damageTaken, 0)
@@ -43,12 +47,5 @@ abstract class Character(
     /**
      * Verifica se o personagem ainda está vivo.
      */
-    fun isAlive(): Boolean {
-        // Exercicio: É possível transformar em uma função de única linha?
-        if (health > 0) {
-            return true
-        } else {
-            return false
-        }
-    }
+    fun isAlive(): Boolean = health > 0
 }
